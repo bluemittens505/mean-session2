@@ -22,12 +22,12 @@
 			<p id="description">Select an image.</p>
 		</div>
 
-		<!-- onmouseover="this.style.backgroundColor ='#000'"  -->
+<!-- onmouseover="this.style.backgroundColor ='#000'"  -->
 	</div>
-
-	<script type="text/javascript">
+<script type="text/javascript">
 
 	window.onload = function(){
+console.log("calling prepareGallery");
 		prepareGallery();
 	}
 
@@ -35,20 +35,26 @@
 		var gallery = document.getElementById("imageGallery");
 		var links = gallery.getElementsByTagName("a");
 
+console.log("in prepareGallery");
+console.log(gallery);
+console.log(links);
 		for ( var i=0; i < links.length; i++) {
 			links[i].onclick = function() {
 				showPicOne(this);
 				return false;
 			}
 		}
+console.log("after set onclick");
+console.log(links);
 	}
 
 
 	function showPicOne(whichpic) {
 
-
 		var source = whichpic.getAttribute("href");
+console.log(source);
 		var placeholder = document.getElementById("placeholder");
+console.log(placeholder);
 		placeholder.setAttribute("src",source);
 
 		var text = whichpic.getAttribute("title");
@@ -57,7 +63,8 @@
 
 	}
 
-	</script>
+</script>
+
 </body>
 </html>
 
